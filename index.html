@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
-      <img src="http://placehold.it/150x100" alt="Логотип" width="150" height="50">
+      <img src="img/logo-gllacy.svg" alt="Логотип Глейси" width="154" height="64">
       <nav class="main-nav">
         <ul>
           <li><a href="#">Каталог</a></li>
@@ -24,9 +25,24 @@
       <p>С 10 до 20, ежедневно<br>
       <b>8 812 450-25-25</b></p>
     </div>
-    <div class="slider"> <!--Знать бы, как делать этот слайдер-->
-      <img src="http://placehold.it/200x200" alt="Две мороженки" width="200" height="200">
-      <p>Крем-брюле и пломбир с малиновым джемом</p>
+    <div class="slider"> <!-- вроде, он должен сам переключаться? -->
+      <div class="slide">
+        <img src="img/ice-cream.png" alt="Две мороженки" width="647" height="584">
+        <a href="#">Крем-брюле и пломбир с малиновым джемом</a>
+      </div>
+      <div class="slide">
+        <img src="http://placehold.it/200x200" alt="другие две мороженки" width="647" height="584">
+        <a href="#">другие две мороженки</a>
+      </div>
+      <div class="slide">
+        <img src="http://placehold.it/200x200" alt="третьи две мороженки" width="647" height="584">
+        <a href="#">третьи две мороженки</a>
+      </div>
+      <ul class="slider-switch">
+        <li><a href="#">o</a></li> <!-- непонятно, что должно лежать внутри а -->
+        <li><a href="#">o</a></li>
+        <li><a href="#">o</a></li>
+      </ul>
     </div>
     <a class="btn" href="#">Давайте оба!</a>
     <div class="offers">
@@ -44,43 +60,49 @@
       </div>
     </div>
     <div class="best-selling">
-      <ul>
+      <ul> <!-- а можно вместо отдельного класса для ul использовать в css .best-selling ul {}? -->
         <li>
-          <img src="http://placehold.it/20x20" alt="Хит" width="20" height="20">
-          <img src="http://placehold.it/100x100" alt="Фото товара" width="100" height="100">
-          <p>310 &#8381/кг</p>
+          <a href="#"><img src="img/item-1.png" alt="Фото товара" width="267" height="267"></a>
+          <p>310 &#8381;/кг</p>
           <a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
         </li>
         <li>
-          <img src="http://placehold.it/20x20" alt="Хит" width="20" height="20">
-          <img src="http://placehold.it/100x100" alt="Фото товара" width="100" height="100">
-          <p>380 &#8381/кг</p>
+          <a href="#"><img src="img/item-2.png" alt="Фото товара" width="267" height="267""></a>
+          <p>380 &#8381;/кг</p>
           <a href="#">Сливочно-кофейное с кусочками шоколада</a>
         </li>
         <li>
-          <img src="http://placehold.it/20x20" alt="Хит" width="20" height="20">
-          <img src="http://placehold.it/100x100" alt="Фото товара" width="100" height="100">
-          <p>355 &#8381/кг</p>
+          <a href="#"><img src="img/item-3.png" alt="Фото товара" width="267" height="267"></a>
+          <p>355 &#8381;/кг</p>
           <a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
         </li>
         <li>
-          <img src="http://placehold.it/20x20" alt="Хит" width="20" height="20">
-          <img src="http://placehold.it/100x100" alt="Фото товара" width="100" height="100">
-          <p>415 &#8381/кг</p>
+          <a href="#"><img src="img/item-4.png" alt="Фото товара" width="267" height="267"></a>
+          <p>415 &#8381;/кг</p>
           <a href="#">Сливочное крем-брюле с карамельной подливкой</a>
         </li>
       </ul>
     </div>
     <div class="features">
-      <b>Магазин Глейси - это онлайн и офлайн магазин по продаже мороженого 
-      собственного производства на развес</b>
-      <p>Все наше мороженое изготавливается на собственном производстве с использованием современного оборудования и проверенных временем технологий.</p>
-      <p>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингридиенты и добавки произведены из натурального, экологически чистого сырья.</p>
-      <p>Закупка ингридиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p>
-      <p>Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
+      <h3>Магазин Глейси - это онлайн и офлайн магазин по продаже мороженого 
+      собственного производства на развес</h3>
+      <ul>
+        <li class="make">
+          <p>Все наше мороженое изготавливается на собственном производстве с использованием современного оборудования и проверенных временем технологий.</p>
+        </li>
+        <li class="ingredients">
+          <p>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингридиенты и добавки произведены из натурального, экологически чистого сырья.</p>
+        </li>
+        <li class="farms">
+          <p>Закупка ингридиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p>
+        </li>
+        <li class="delivery">
+          <p>Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
+        </li>
+      </ul>
     </div>
     <div class="blog">
-      <h2>Новое в нашем блоге</h2>
+      <h3>Новое в нашем блоге</h3>
       <p><a href="#">10 способов сервировки фруктовых щербетов к столу</a></p>
     </div>
     <div class="subscribe">
@@ -91,37 +113,37 @@
       </form>
     </div>
     <div class="map">
-      <img src="http://placehold.it/1200x400" alt="Мы на карте" width="1200" height="400">
+      <img src="img/map.jpg" alt="Мы на карте" width="1200" height="430">
     </div>
     <div class="contacts">
-      <p>Адрес нашего офиса и
+      <span>Адрес нашего офиса и
       офлайн магазина:
       <b>ул. Большая Конюшенная
-      19/8, Санкт-Петербург</b></p>
-      <p>Для заказов по телефону:
+      19/8, Санкт-Петербург</b></span>
+      <span>Для заказов по телефону:
       <b>8 812 450-25-25</b>
-      (с 10 до 20 ежедневно)</p>
+      (с 10 до 20 ежедневно)</span>
       <a class="btn" href="#">Форма обратной связи</a>
     </div>
     <footer class="main-footer">
-      <section class="socials">
+      <div class="socials">
         <a class="btn-tw" href="#">Твиттер</a>
         <a class="btn-inst" href="#">Инстаграм</a>
         <a class="btn-fb" href="#">Фейсбук</a>
         <a class="btn-vk" href="#">Вконтакте</a>
-      </section>
-      <section class="docs">
+      </div>
+      <div class="docs">
         <ul>
           <li><a href="#">Для поставщиков</a></li>
           <li><a href="#">О производстве</a></li>
           <li><a href="#">Наши документы</a></li>
           <li><a href="#">Экологические стандарты</a></li>
         </ul>
-      </section>
-      <section class="copyright">
-        <img src="http://placehold.it/100x100" alt="Логотип разработчика" width="70" height="30">
-        Сделано в <a href="https://htmlacademy.ru">HTML Academy</a> &#169 2016
-      </section>
+      </div>
+      <div class="copyright">
+        <img src="img/logo-academy.png" alt="Логотип разработчика" width="108" height="38">
+        Сделано в <a href="https://htmlacademy.ru">HTML Academy</a> &#169; 2016
+      </div>
     </footer>
   </body>
 </html>
