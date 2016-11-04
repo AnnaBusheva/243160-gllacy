@@ -4,14 +4,292 @@ body {
 	color: #323232;
 	font-weight: normal;
 	font-family: Roboto, sans-serif;
-	/* чтобы белые заголовки не потерялись */
+	
+	/* Подсветка */
 	background-color: #849d8f;
 }
-
+	
 h1, h2 {
 	font-size: 35px;
 	line-height: 41px;
 	color: #ffffff;
 	font-weight: bold;
 	font-family: Roboto, sans-serif;
+}
+
+.main-header {
+	width: 1200px;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	
+	/* Подсветка */
+	background-color: #fcf;
+}
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.main-header img {
+	float: left;
+	width: 154px;
+	margin-left: 20px;
+
+	/* Подсветка */
+	background-color: #f9c;
+}
+
+.main-nav {
+	float: left;
+	width: 410px;
+	margin-left: 30px;
+	font-size: 0;
+
+	/* Подсветка */
+	background-color: #f9c;
+}
+
+.main-nav li {
+	display: inline-block;
+	margin-right: 27px;
+	font-size: 16px;
+}
+
+.user-block {
+	float: right;
+	width: 267px;
+
+	/* Подсветка */
+	background-color: #f9c;
+}
+
+main {
+	width: 1146px;
+	margin: 0 auto;
+	padding: 0 27px;
+	
+	/* Подсветка */
+	background-color: #fcf;
+}
+
+.aside {
+	float: right;
+	width: 267px;
+	
+	/* Подсветка */
+	background-color: #c99;
+}
+
+/* возникло подозрение, что в слайдере не обошлось без position, поэтому он не доделан */
+.slider {
+	
+	/* Подсветка */
+	background-color: #ffc;
+}
+
+.slide {
+	width: 647px;
+	margin: 0 auto;
+
+	/* Подсветка */
+	background-color: #c9f;
+}
+
+/* временно, для удобства просмотра */
+.slide-2, .slide-3 {
+	display: none;
+}
+
+.slider-switch {
+	font-size: 0;
+}
+
+.slider-switch li {
+	display: inline-block;
+	margin-right: 8px;
+	font-size: 16px;
+}
+
+.offers {
+	margin-bottom: 40px;
+
+	/* Подсветка */
+	background-color: #f9c;
+}
+
+.offer-item-1 {
+	float: left;
+	width: 560px;
+
+	/* Подсветка */
+	background-color: #c9f;
+}
+
+.offer-item-2 {
+	float: right;
+	width: 560px;
+
+	/* Подсветка */
+	background-color: #c9f;
+}
+
+.best-selling {
+	margin-bottom: 40px;
+	font-size: 0;
+
+	/* Подсветка */
+	background-color: #ffc;
+}
+
+.best-selling ul {
+	margin: 0;
+	padding: 0;
+}
+
+.best-selling li {
+	display: inline-block;
+	width: 267px;
+	margin-right: 26px;
+	font-size: 16px;
+}
+
+.best-selling li:last-child {
+	margin-right: 0;
+}
+
+.features {
+	margin-bottom: 40px;
+
+	/* Подсветка */
+	background-color: #f9c;
+}
+
+.content {
+	margin-bottom: 40px;
+
+	/* Подсветка */
+	background-color: #ffc;
+}
+
+.blog {
+	float: left;
+	width: 560px;
+
+	/* Подсветка */
+	background-color: #c9f;
+}
+
+.subscribe {
+	float: right;
+	width: 560px;
+
+	/* Подсветка */
+	background-color: #c9f;
+}
+
+.map {
+	margin-left: -27px;
+}
+
+/* тоже position? */
+.contacts {
+	width: 303px;
+
+	/* Подсветка */
+	background-color: #ffc;
+}
+
+.main-footer {
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 20px;
+	
+	/* Подсветка */
+	background-color: #fcf;
+}
+
+.socials {
+	float: left;
+	width: 267px;
+	margin-right: 26px;
+
+	/* Подсветка */
+	background-color: #c9f;
+}
+
+.docs {
+	float: left;
+	width: 560px;
+	
+	/* Подсветка */
+	background-color: #c9f;
+}
+
+.copyright {
+	float: right;
+	width: 267px;
+	
+	/* Подсветка */
+	background-color: #c9f;
+}
+
+/* catalog */
+
+.breadcrumbs {
+	font-size: 0;
+
+	/* Подсветка */
+	background-color: #ffc;
+}
+
+.breadcrumbs li {
+	display: inline-block;
+	margin-right: 21px;
+	font-size: 16px;
+}
+
+.catalog {
+	margin-bottom: 80px;
+	font-size: 0;
+
+	/* Подсветка */
+	background-color: #f9c;
+}
+
+.catalog ul {
+	margin: 0;
+	padding: 0;
+}
+
+.catalog li {
+	display: inline-block;
+	width: 267px;
+	margin-right: 26px;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+.catalog li:nth-child(4n) {
+	margin-right: 0;
+}
+
+.pagination {
+	font-size: 0;
+
+	/* Подсветка */
+	background-color: #ffc;
+}
+
+.pagination ul {
+	margin: 0;
+	padding: 0;
+}
+
+.pagination li {
+	display: inline-block;
+	width: 26px;
+	margin-right: 12px;
+	font-size: 16px;
 }
