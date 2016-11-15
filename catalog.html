@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Глейси - каталог</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
@@ -11,7 +13,7 @@
         <a href="#"><img src="img/logo-gllacy.svg" alt="Логотип Глейси" width="154" height="64"></a>
         <nav class="main-nav">
           <ul>
-            <li class="active-section"><a href="#">Каталог</a></li>
+            <li class="active-section"><span>Каталог</span></li>
             <li><a href="#">Доставка и оплата</a></li>
             <li><a href="#">О Компании</a></li>
           </ul>
@@ -19,7 +21,7 @@
         <div class="user-block">
         	<a class="btn-header" href="#">Поиск</a>
         	<a class="btn-header" href="#">Вход</a>
-        	<a class="btn-full" href="#">2 товара</a>
+        	<a class="btn-header full" href="#">2 товара</a>
         </div>
         <div class="aside">
           <span>С 10 до 20, ежедневно</span><br>
@@ -39,7 +41,10 @@
           <label>
             Сортировка:
             <select name="sort">
-              <option value="popular">по популярности</option>
+              <option value="popular-first">по популярности</option>
+              <option value="cheap-first">сначала недорогие</option>
+              <option value="expensive-first">сначала дорогие</option>
+              <option value="fat-first">по жирности</option>
             </select>
           </label>
           <label>
@@ -60,7 +65,7 @@
             <label>
               <input type="radio" name="fat" value="more30">выше 30%
             </label>
-          </fieldset>
+          </fieldset><br>
           <fieldset>
             <legend>Наполнители:</legend>
             <label>
@@ -84,77 +89,101 @@
         <div class="catalog">
           <ul>
             <li>
-              <img src="img/item-1.png" alt="Фото товара" width="267" height="267">
-              <p>310 &#8381;/кг</p>
+              <a href="#"><img src="img/item-1.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">310&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
             </li>
             <li>
-              <img src="img/item-2.png" alt="Фото товара" width="267" height="267">
-              <p>380 &#8381;/кг</p>
+              <a href="#"><img src="img/item-2.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">380&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочно-кофейное с кусочками шоколада</a>
             </li>
             <li class="active-item">
-              <img src="img/item-3.png" alt="Фото товара" width="267" height="267">
-              <p>355 &#8381;/кг</p>
+              <a href="#"><img src="img/item-3.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">355&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
-              <a class="btn" href="#">Быстрый просмотр</a>
+              <!--<a class="btn" href="#">Быстрый просмотр</a>-->
             </li>
             <li>
-              <img src="img/item-4.png" alt="Фото товара" width="267" height="267">
-              <p>415 &#8381;/кг</p>
+              <a href="#"><img src="img/item-4.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">415&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочное крем-брюле с карамельной подливкой</a>
             </li>
             <li>
-              <img src="img/item-5.png" alt="Фото товара" width="267" height="267">
-              <p>325 &#8381;/кг</p>
+              <a href="#"><img src="img/item-5.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">325&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочное с брусничным джемом</a>
             </li>
             <li>
-              <img src="img/item-6.png" alt="Фото товара" width="267" height="267">
-              <p>410 &#8381;/кг</p>
+              <a href="#"><img src="img/item-6.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">410&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочно-черничное с цельными ягодами черники</a>
             </li>
             <li>
-              <img src="img/item-7.png" alt="Фото товара" width="267" height="267">
-              <p>375 &#8381;/кг</p>
+              <a href="#"><img src="img/item-7.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">375&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочно-лимонное с карамельной присыпкой</a>
             </li>
             <li>
-              <img src="img/item-8.png" alt="Фото товара" width="267" height="267">
-              <p>320 &#8381;/кг</p>
+              <a href="#"><img src="img/item-8.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">320&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочное с шоколадной стружкой</a>
             </li>
             <li>
-              <img src="img/item-9.png" alt="Фото товара" width="267" height="267">
-              <p>440 &#8381;/кг</p>
+              <a href="#"><img src="img/item-9.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">440&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочно-ванильное с кусочками шоколада</a>
             </li>
             <li>
-              <img src="img/item-10.png" alt="Фото товара" width="267" height="267">
-              <p>435 &#8381;/кг</p>
+              <a href="#"><img src="img/item-10.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">435&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочное с ментоловым сиропом</a>
             </li>
             <li>
-              <img src="img/item-11.png" alt="Фото товара" width="267" height="267">
-              <p>355 &#8381;/кг</p>
+              <a href="#"><img src="img/item-11.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">355&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочное с кусочками черного шоколада</a>
             </li>
             <li>
-              <img src="img/item-12.png" alt="Фото товара" width="267" height="267">
-              <p>420 &#8381;/кг</p>
+              <a href="#"><img src="img/item-12.png" alt="Фото товара" width="267" height="267"></a>
+              <div class="prise-position">
+                <span class="prise">420&#8381;</span><span class="unit">/кг</span>
+              </div>
               <a href="#">Сливочное с мятным сиропом</a>
             </li>
           </ul>
         </div>
         <div class="pagination">
           <ul>
-            <li>&#60;</li>
-            <li><a href="#">1</a></li>
+            <li><span>&#60;</span></li>
+            <li><a class="active-page" href="#">1</a></li>
             <li><a href="#">2</a></li>
             <li><a href="#">3</a></li>
             <li><a href="#">4</a></li>
             <li><a href="#">5</a></li>
-            <li>&#62;</li>
+            <li><a href="#">&#62;</a></li>
           </ul>
         </div>
       </main>
@@ -166,8 +195,8 @@
           <a class="btn-vk" href="#">Вконтакте</a>
         </div>
         <div class="docs">
-          <ul>
-            <li><a href="#">Для поставщиков</a></li>
+          <ul class="clearfix">
+            <li class="vendors"><a href="#">Для поставщиков</a></li>
             <li><a href="#">Наши документы</a></li>
             <li><a href="#">О производстве</a></li>
             <li><a href="#">Экологические стандарты</a></li>

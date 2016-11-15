@@ -3,7 +3,9 @@
   <head>
 	  <meta charset="utf-8">
 	  <title>HTML Academy: Глейси</title>
-	  <link href="css/style.css" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
 	  <div class="all-content">
@@ -21,7 +23,7 @@
       		<a class="btn-header" href="#">Вход</a>
       		<a class="btn-header" href="#">Пусто</a>
     	  </div>
-    	  <div class="aside"> <!-- А между хедером и мейном можно что-то ставить? -->
+    	  <div class="aside">
       		<span>С 10 до 20, ежедневно</span><br>
       		<a href="tel:88124502525">8 812 450-25-25</a>
     	  </div>
@@ -52,36 +54,44 @@
         		<h2>Малинка даром!</h2>
         		<p>При покупке 2 кг любого фруктового мороженого добавим
         		в ваш заказ банку малинового варенья бесплатно.</p>
-        		<a class="btn" href="#">Хочу варенье!</a>
+        		<div class="btn-position"><a class="btn" href="#">Хочу варенье!</a></div>
       	  </div>
       	  <div class="offer-item">
         		<h2>Шоколадки даром!</h2>
         		<p>При покупке 2 кг пломбира добавим в ваш заказ упаковку
-        		вкуснейшей шоколадной присыпки совершенно бесплатно</p>
-        		<a class="btn" href="#">Хочу шоколадки!</a>
+        		вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+        		<div class="btn-position"><a class="btn" href="#">Хочу шоколадки!</a></div>
       	  </div>
       	</div>
-      	<div class="best-selling">
+      	<div class="catalog">
       	  <ul>
         		<li class="hit">
         		  <a href="#"><img src="img/item-1.png" alt="Фото товара" width="267" height="267"></a>
-        		  <p>310 &#8381;/кг</p>
+        		  <div class="prise-position">
+                <span class="prise">310&#8381;</span><span class="unit">/кг</span>
+              </div>
         		  <a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
         		</li>
         		<li class="hit">
         		  <a href="#"><img src="img/item-2.png" alt="Фото товара" width="267" height="267"></a>
-        		  <p>380 &#8381;/кг</p>
-        		  <a href="#">Сливочно-кофейное с кусочками шоколада</a>
+        		  <div class="prise-position">
+                <span class="prise">380&#8381;</span><span class="unit">/кг</span>
+        		  </div>
+              <a href="#">Сливочно-кофейное с кусочками шоколада</a>
         		</li>
         		<li class="hit">
         		  <a href="#"><img src="img/item-3.png" alt="Фото товара" width="267" height="267"></a>
-        		  <p>355 &#8381;/кг</p>
-        		  <a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
+        		  <div class="prise-position">
+                <span class="prise">355&#8381;</span><span class="unit">/кг</span>
+        		  </div>
+              <a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
         		</li>
         		<li class="hit">
         		  <a href="#"><img src="img/item-4.png" alt="Фото товара" width="267" height="267"></a>
-        		  <p>415 &#8381;/кг</p>
-        		  <a href="#">Сливочное крем-брюле с карамельной подливкой</a>
+        		  <div class="prise-position">
+                <span class="prise">415&#8381;</span><span class="unit">/кг</span>
+        		  </div>
+              <a href="#">Сливочное крем-брюле с карамельной подливкой</a>
         		</li>
       	  </ul>
       	</div>
@@ -106,29 +116,31 @@
       	<div class="content clearfix">
       	  <div class="blog">
         		<h3>Новое в нашем блоге</h3>
-        		<p><a href="#">10 способов сервировки фруктовых щербетов к столу</a></p>
+        		<a href="#">10 способов сервировки фруктовых щербетов к столу</a>
       	  </div>
       	  <div class="subscribe">
         		<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
         		<form action="#" method="post">
-        		  <input type="email" name="usermail">
+        		  <input type="email" name="usermail" placeholder="Электронная почта">
         		  <button class="btn" type="submit">Отправить</button>
         		</form>
       	  </div>
       	</div>
-      	<div class="map">
-      	  <img src="img/map.jpg" alt="Мы на карте" width="1200" height="430">
-      	</div>
-      	<div class="contacts">
-      	  <span>Адрес нашего офиса и
-      	  офлайн магазина:
-      	  <b>ул. Большая Конюшенная
-      	  19/8, Санкт-Петербург</b></span>
-      	  <span>Для заказов по телефону:
-      	  <b>8 812 450-25-25</b>
-      	  (с 10 до 20 ежедневно)</span>
-      	  <a class="btn" href="#">Форма обратной связи</a>
-      	</div>
+      	<div class="location">
+          <div class="map">
+        	  <img src="img/map.jpg" alt="Мы на карте" width="1200" height="430">
+        	</div>
+        	<div class="contacts">
+        	  <span>Адрес нашего офиса и<br>
+        	  офлайн магазина:<br>
+        	  <b>ул. Большая Конюшенная<br>
+        	  19/8, Санкт-Петербург</b></span>
+        	  <span>Для заказов по телефону:<br>
+        	  <a href="tel:88124502525">8 812 450-25-25</a><br>
+        	  (с 10 до 20 ежедневно)</span>
+        	  <a class="btn" href="#">Форма обратной связи</a>
+        	</div>
+        </div>
     	</main>
     	<footer class="main-footer central clearfix">
     	  <div class="socials">
@@ -138,8 +150,8 @@
       		<a class="btn-vk" href="#">Вконтакте</a>
     	  </div>
     	  <div class="docs">
-      		<ul>
-      		  <li><a href="#">Для поставщиков</a></li>
+      		<ul class="clearfix">
+      		  <li class="vendors"><a href="#">Для поставщиков</a></li>
       		  <li><a href="#">Наши документы</a></li>
       		  <li><a href="#">О производстве</a></li>
       		  <li><a href="#">Экологические стандарты</a></li>
