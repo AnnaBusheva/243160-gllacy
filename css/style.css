@@ -7,8 +7,13 @@ body {
 	font-family: Roboto, sans-serif;
 	background: #849d8f;
 }
-	
+
+body > input {
+	display: none;
+}
+
 h1, h2 {
+	margin: 0;
 	font-size: 35px;
 	line-height: 41px;
 	color: #fff;
@@ -16,12 +21,23 @@ h1, h2 {
 	font-family: Roboto, sans-serif;
 }
 
+h1 {
+	margin-bottom: 30px;
+}
+
+.all-content-main {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #849d8f url("../img/ice-cream-1.png") 50% 0 no-repeat;
+	transition:
+		background-color 0.5s ease,
+		background-image 0.5s ease;
+}
+
 .all-content {
 	width: 1200px;
 	margin: 0 auto;
-
-	/* Подсветка */
-	outline: 1px solid #fff;
+	background-image: linear-gradient(#9db1a5 0px, #849d8f 647px);
 }
 
 .central {
@@ -46,21 +62,21 @@ h1, h2 {
 	margin-top: 10px;
 }
 
-.main-nav {
+nav {
 	float: left;
 	width: 420px;
 	margin-left: 16px;
 	margin-top: 23px;
 }
 
-.main-nav ul {
+ul.main-nav {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	font-size: 0;
 }
 
-.main-nav li {
+.main-nav > li {
 	position: relative;
 	display: inline-block;
 	font-size: 16px;
@@ -68,7 +84,7 @@ h1, h2 {
 	vertical-align: top;
 }
 
-.main-nav li::after {
+.main-nav > li::after {
 	content: "";
 	position: absolute;
 	bottom: 7px;
@@ -78,7 +94,7 @@ h1, h2 {
 	background: rgba(255,255,255,0.2);
 }
 
-.main-nav a {
+.main-nav > li > a {
 	display: block;
 	padding: 7px 14px;
 	font-weight: 700;
@@ -86,28 +102,104 @@ h1, h2 {
 	color: #fff;
 }
 
-.main-nav a:hover {
+.main-nav > li > a:hover {
 	color: #323232;
 	background: #fff;
 	border-radius: 15px;
 }
 
-.main-nav a:active {
+.main-nav > li > a:active {
 	color: #323232;
 	background: #ededed;
 	border-radius: 15px;
 	box-shadow: inset 0 2px 1px 0 #696969;
 }
 
+.main-nav > li:hover .sub-menu {
+	display: block;
+}
+
+ul.sub-menu {
+	display: none;
+	position: absolute;
+	top: 32px;
+	left: -7px;
+	z-index: 2;
+	width: 143px;
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+	list-style: none;
+	background: transparent;
+	border-radius: 5px;
+	box-shadow: 0 20px 20px 0 rgba(0,0,0,0.4);
+}
+
+.sub-menu .new {
+	font-weight: 700;
+}
+
+.sub-menu a {
+	display: block;
+	padding: 6px 20px;
+	font-size: 14px;
+	line-height: 16px;
+	text-decoration: none;
+	color: #323232;
+}
+
+.sub-menu li {
+	position: relative;
+	background: #fff;
+}
+
+.sub-menu li:first-child {
+	padding: 5px 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.sub-menu li:first-child::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 6px;
+	right: 9px;
+	height: 1px;
+	background: rgba(50,50,50,0.2);
+}
+
+.sub-menu li:last-child {
+	padding-bottom: 6px;
+	border-radius: 0 0 5px 5px;
+}
+
+.sub-menu a:hover {
+	background: #fbded7;
+}
+
+.sub-menu a:active {
+	background: #f6b5a5;
+}
+
 .user-block {
 	float: right;
-	width: 275px;
+	margin: 0;
 	margin-top: 23px;
+	padding: 0;
+	list-style: none;
+	font-size: 0;
 	text-align: right;
 }
 
-.btn-header {
+.user-block li {
+	position: relative;
 	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+
+.btn-header {
+	display: block;
 	margin-right: 10px;
 	padding: 8px 16px 8px 45px;
 	color: #fff;
@@ -115,17 +207,16 @@ h1, h2 {
 	line-height: 16px;
 	font-weight: 500;
 	text-decoration: none;
-	vertical-align: top;
 	border-radius: 15px;
 	background: rgba(255,255,255,0.2) url("../img/icon-login-white.png") 16px 6px no-repeat;
 }
 
-.btn-header:nth-child(2):hover {
+.user-block li:nth-child(2) .btn-header:hover {
 	color: #323232;
 	background: #fff url("../img/icon-login-black.png") 16px 6px no-repeat;
 }
 
-.btn-header:first-child {
+.user-block li:first-child .btn-header {
 	width: 32px;
 	height: 32px;
 	padding: 0;
@@ -133,20 +224,213 @@ h1, h2 {
 	background: rgba(255,255,255,0.2) url("../img/icon-search-white.png") 7px 7px no-repeat;
 }
 
-.btn-header:first-child:hover {
+.user-block li:hover .user-form {
+	display: block;
+}
+
+.user-block li:first-child .btn-header:hover {
 	background: #fff url("../img/icon-search-black.png") 7px 7px no-repeat;
 }
 
-.btn-header:last-child {
+.user-block li:last-child .btn-header {
+	width: 67px;
 	margin-right: 0;
-	padding-right: 34px;
 	background: rgba(255,255,255,0.2) url("../img/icon-basket-empty.png") 16px 6px no-repeat;
+}
+
+.user-form {
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 36px;
+	z-index: 3;
+	padding: 20px 15px 0 15px;
+	border-radius: 5px;
+	background: #f8f7f4;
+	box-shadow: 0 20px 20px 0 rgba(0,0,0,0.4);
+}
+
+.user-form::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: -10px;
+	width: 100%;
+	height: 10px;
+	background: transparent;
+}
+
+.user-form input {
+	width: 309px;
+	margin: 0;
+	margin-bottom: 20px;
+	border: 1px solid #d3d3d2;
+	padding: 9px 14px;
+	font-size: 14px;
+	line-height: 24px;
+	color: #323232;
+	border-radius: 5px;
+}
+
+.search {
+	width: 341px;
+}
+
+.search input:hover {
+	width: 307px;
+	border: 2px solid #d3d3d2;
+	padding: 8px 13px;
+}
+
+.search input:focus {
+	width: 307px;
+	border: 2px solid #8fbdec;
+	padding: 8px 13px;
+}
+
+.login {
+	width: 277px;
+}
+
+.login input {
+	width: 211px;
+}
+
+.login input:hover {
+	width: 209px;
+	border: 2px solid #d3d3d2;
+	padding: 8px 13px;
+}
+
+.login input:focus {
+	width: 209px;
+	border: 2px solid #8fbdec;
+	padding: 8px 13px;
+}
+
+.login .help {
+	float: right;
+}
+
+.login a {
+	color: #323232;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.login a:hover, .blog a:active {
+	color: #e84d37;
+}
+
+.user-form .btn {
+	margin-bottom: 20px;
+	margin-right: 10px; 
+	border: none;
+	padding: 10px 25px;
+}
+
+.user-block li:hover .basket {
+	display: block;
+}
+
+.basket {
+	display: none;
+	position: absolute;
+	top: 36px;
+	right: 0;
+	z-index: 4;
+	width: 511px;
+	padding: 20px 14px;
+	font-size: 13px;
+	line-height: 16px;
+	text-align: right;
+	color: #323232;
+	background: #f8f7f4;
+	border-radius: 5px;
+	box-shadow: 0 20px 20px 0 rgba(0,0,0,0.4);
+}
+
+.basket::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: -10px;
+	width: 100%;
+	height: 10px;
+	background: transparent;
+}
+
+.basket table {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #cacac7;
+    padding: 0;
+    text-align: left;
+}
+
+.basket td {
+    height: 53px;
+    padding-top: 10px;
+    vertical-align: top;
+}
+
+.basket td:first-child {
+	position: relative;
+	width: 234px;
+	padding-left: 73px;
+	background: url("../img/item-3.png") 27px 0 no-repeat;
+	background-size: 33px;
+}
+
+.basket tr:first-child td:first-child {
+	background: url("../img/item-1.png") 27px 0 no-repeat;
+	background-size: 33px;
+}
+
+.basket td:first-child::before,
+.basket td:first-child::after {
+	content: "";
+	position: absolute;
+	left: 6px;
+	top: 15px;
+	width: 13px;
+	height: 1px;
+	background: #333333;
+}
+
+.basket td:first-child::before {
+	transform: rotate(45deg);
+}
+
+.basket td:first-child::after {
+	transform: rotate(-45deg);
+}
+
+.basket td:nth-child(2) {
+	width: 122px;
+}
+
+.basket td:last-child {
+	width: 80px;
+}
+
+.basket span {
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 18px;
+}
+
+.basket .btn {
+	float: right;
+	margin-top: 16px;
+	padding: 10px 14px;
 }
 
 .aside {
 	position: absolute;
 	top: 74px;
 	right: 0;
+	z-index: 1;
 	width: 267px;
 	text-align: right;
 	color: #fff;
@@ -161,54 +445,77 @@ h1, h2 {
 	text-decoration: none;
 }
 
-/* возникло подозрение, что в слайдере не обошлось без position, поэтому он не доделан */
 .slider {
-	
-	/* Подсветка */
-	outline: 1px solid #fff;
+	position: relative;
+	margin-bottom: 40px;
+	padding-top: 314px;
+	text-align: center;
+	color: #fff;
 }
 
 .slide {
-	width: 647px;
-	margin: 0 auto;
-
-	/* Подсветка */
-	outline: 1px solid #fff;
-}
-
-.slide a {
-	display: block;
-	/*font-size: 60px;*/
-	font-weight: 700;
-	text-decoration: none;
-	color: #fff;
-}
-
-/* временно, для удобства просмотра */
-.slide-2, .slide-3 {
 	display: none;
 }
 
+.slide p {
+	width: 700px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	font-size: 60px;
+	line-height: 60px;
+	font-weight: 700;
+}
+
 .slider-switch {
-	margin: 0;
-	padding: 0;
+	position: absolute;
+	bottom: 63px;
+	left: 0;
+	z-index: 20;
 	font-size: 0;
 }
 
-.slider-switch li {
+.slider-switch label {
 	display: inline-block;
+	width: 21px;
+	height: 21px;
 	margin-right: 8px;
-	font-size: 16px;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
+	vertical-align: top;
+	cursor: pointer;
 }
 
-.slider-switch a {
-	text-decoration: none;
-	color: #fff;
+.slider-switch label:hover {
+	background: rgba(255,255,255,0.4);
+}
+
+#switch-1:checked ~ .all-content-main #slide-1,
+#switch-2:checked ~ .all-content-main #slide-2,
+#switch-3:checked ~ .all-content-main #slide-3 {
+	display: block;
+}
+
+#switch-1:checked ~ .all-content-main label[for="switch-1"],
+#switch-2:checked ~ .all-content-main label[for="switch-2"],
+#switch-3:checked ~ .all-content-main label[for="switch-3"] {
+	background: #ffffff;
+}
+
+#switch-1:checked ~ .all-content-main {
+	background: #849d8f url("../img/ice-cream-1.png") 50% 0 no-repeat;
+}
+
+#switch-2:checked ~ .all-content-main {
+	background: #8996a6 url("../img/ice-cream-2.png") 50% 0 no-repeat;
+}
+
+#switch-3:checked ~ .all-content-main {
+	background: #9d8b84 url("../img/ice-cream-3.png") 50% 0 no-repeat;
 }
 
 .btn {
 	display: inline-block;
-	color: #fff;
+	color: #ffffff;
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: 700;
@@ -317,14 +624,14 @@ h1, h2 {
 	text-shadow: 1px 1px 3px #313235;
 }
 
-.catalog a:last-child {
+.catalog a.ice-cream-name {
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 	font-weight: 500;
 	text-decoration: none;
 	color: #fff;
 }
 
-.catalog a:last-child:hover, .catalog a:last-child:active {
+.catalog a.ice-cream-name:hover, .catalog a.ice-cream-name:active {
 	color: #ffbc9e;
 	border-bottom: 1px solid rgba(255,188,158,0.3);
 }
@@ -337,6 +644,35 @@ h1, h2 {
 	width: 61px;
 	height: 61px;
 	background: url("../img/hit.png") no-repeat;
+}
+
+.wrapper {
+	display: none;
+	position: absolute;
+	top: -6px;
+	left: -13px;
+	z-index: 10;
+	width: 267px;
+	height: 393px;
+	padding: 6px 13px;
+	border-radius: 5px;
+	background: rgba(255,255,255,0.2);
+}
+
+.wrapper .prise-position {
+	top: 221px;
+	left: 13px;
+}
+
+.wrapper .btn {
+	margin: 0 auto;
+	margin-top: 11px;
+	padding: 10px 17px;
+}
+
+/* только вот буковки белые с нижнего слоя неаккуратно проступают */
+.catalog li:hover .wrapper {
+	display: block;
 }
 
 .features {
@@ -463,8 +799,6 @@ h1, h2 {
 	position: relative;
 }
 
-/* Про отступ: класс выравнивания задан родителю, main. Если убрать main,
-выравнивать придётся каждый блок внутри него, а их немало, учитывая 2 страницы */
 .map {
 	margin-left: -27px;
 }
@@ -618,15 +952,131 @@ h1, h2 {
 	margin-bottom: 5px;
 }
 
+.modal-window {
+	display: none;
+	position: absolute;
+	top: 338px;
+	left: 50%;
+	z-index: 20;
+	width: 478px;
+	margin-left: -263px;
+	border-radius: 15px;
+	padding: 18px 24px;
+	background: #f8f7f4;
+	color: #323232;
+}
+
+.modal-window h2 {
+	margin: 0;
+	margin-bottom: 20px;
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 500;
+	color: #323232;
+}
+
+.modal-window .close {
+	position: absolute;
+	top: 25px;
+	right: 15px;
+	width: 18px;
+	height: 18px;
+	font-size: 0;
+	background: transparent;
+}
+
+.modal-window .close::before,
+.modal-window .close::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 21px;
+	height: 2px;
+	background: #323232;
+}
+
+.modal-window .close::before {
+	transform: rotate(45deg);
+}
+
+.modal-window .close::after {
+	transform: rotate(-45deg);
+}
+
+.modal-window input,
+.modal-window textarea {
+	width: 265px;
+	margin-bottom: 20px;
+	border: 1px solid #b2b2b2;
+	border-radius: 5px;
+	padding: 9px 14px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #323232;
+}
+
+.modal-window input:hover {
+	width: 263px;
+	border: 2px solid #b2b2b2;
+	padding: 8px 13px;
+}
+
+/* остаётся рамка автоматического фокуса браузера, как отключить? */
+.modal-window input:focus {
+	width: 263px;
+	border: 2px solid #8fbdec;
+	padding: 8px 13px;
+}
+
+.modal-window textarea {
+	width: 426px;
+	min-height: 153px;
+	margin-bottom: 25px;
+	color: #999999;
+}
+
+.modal-window textarea:hover {
+	width: 424px;
+	border: 2px solid #b2b2b2;
+	padding: 8px 13px;
+}
+
+.modal-window textarea:focus {
+	width: 424px;
+	border: 2px solid #8fbdec;
+	padding: 8px 13px;
+}
+
+/* жирный шрифт при вводе текста и подсказку сверху для поля в фокусе пока не придумала :-( */
+
+.modal-window button {
+	margin-left: 314px;
+	border: none;
+	padding: 10px 24px;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background: rgba(50,50,50,0.3);
+}
+
 /* catalog */
 
-.main-nav .active-section {
+.main-nav > .active-section {
 	text-decoration: none;
 	background: #d07058;
 	border-radius: 15px;
 }
 
-.main-nav .active-section a:hover {
+.main-nav > .active-section::after {
+	content: "";
 	background: none;
 }
 
@@ -637,12 +1087,12 @@ h1, h2 {
 	color: #fff;
 }
 
-.main-nav .active-section::after {
-	content: "";
-	background: none;
+.active-sub-section a {
+	color: #fff;
+	background: #d07058;
 }
 
-.user-block .full {
+.user-block li:last-child .full {
 	padding-right: 16px;
 	color: #323232;
 	background: #fff url("../img/icon-basket-full.png") 16px 6px no-repeat;
@@ -676,6 +1126,7 @@ h1, h2 {
 	color: #fff;
 }
 
+/* странно, у меня в макете и наведение и нажатие с подчёркиванием */
 .breadcrumbs a:hover, .breadcrumbs a:active {
 	color: #ffbc9e;
 	border-bottom: 1px solid rgba(255,188,158,0.3);
@@ -684,19 +1135,262 @@ h1, h2 {
 .filters {
 	margin-bottom: 40px;
 	font-size: 0;
-
-	/* Подсветка */
-	outline: 1px solid #fff;
 }
 
-.filters label {
+.sort {
+	display: inline-block;
+	margin-right: 15px;
+	margin-bottom: 17px;
 	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+	color: #ffffff;
+	vertical-align: top;
+}
+
+.sort label {
+	margin-left: 15px;
+}
+
+.sort select {
+	width: 193px;
+	margin-top: 6px;
+	border: none;
+	border-radius: 18px;
+	padding: 9px 16px;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	color: #ffffff;
+	background: rgba(255,255,255,0.2);
+}
+
+.sort select:hover {
+	color: #323232;
+	background: #ffffff;
+}
+
+.range {
+	display: inline-block;
+	width: 219px;
+	margin-right: 15px;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+	color: #ffffff;
+	vertical-align: top;
+}
+
+.range label:first-child {
+	margin-left: 15px;
+}
+
+.range input {
+	width: 25px;
+	padding: 0;
+	border: none;
+	font: inherit;
+	color: #ffffff;
+	background: transparent;
+}
+
+.range-control {
+	position: relative;
+	height: 36px;
+	margin-top: 6px;
+	border-radius: 18px;
+	background: rgba(255,255,255,0.2);
+}
+
+.range-control .scale {
+	position: absolute;
+	top: 16px;
+	left: 15px;
+	width: 188px;
+	height: 4px;
+	background: rgba(255,255,255,0.5);
+}
+
+.range-control .bar {
+	position: absolute;
+	top: 0;
+	left: 22px;
+	width: 107px;
+	height: 4px;
+	background: #ffffff;
+}
+
+.range-control .toggle {
+	position: absolute;
+	top: 8px;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background: #ffffff;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
+	cursor: pointer;
+}
+
+.range-control .toggle:hover {
+	top: 7px;
+	width: 22px;
+	height: 22px;
+	border-radius: 11px;
+}
+
+.range-control .toggle-min {
+	left: 34px;
+}
+
+.range-control .toggle-max {
+	left: 132px;
 }
 
 .filters fieldset {
 	display: inline-block;
+	margin: 0;
+	margin-right: 15px;
+	border: none;
+	padding: 0;
 	vertical-align: top;
+}
+
+.filters legend {
+	margin-left: 15px;
 	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+}
+
+fieldset label {
+	margin-right: 20px;
+	padding-left: 32px;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+}
+
+.fat {
+	height: 18px;
+	margin-top: 6px;
+	border-radius: 18px;
+	padding: 9px 15px;
+	background: rgba(255,255,255,0.2);
+}
+
+.fat label {
+	position: relative;
+	cursor: pointer; 
+}
+
+.fat label input[type="radio"] {
+	display: none;
+}
+
+.radio-indicator {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #ffffff;
+	border-radius: 10px;
+}
+
+.radio-indicator:hover {
+	width: 16px;
+	height: 16px;
+	border: 2px solid #ffffff;
+}
+
+.fat input[type="radio"]:checked + .radio-indicator::after {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background: #ffffff;
+}
+
+.fat input[type="radio"]:checked:hover + .radio-indicator::after {
+	top: 3px;
+	left: 3px;
+}
+
+.fillers {
+	height: 18px;
+	margin-top: 6px;
+	border-radius: 18px;
+	padding: 9px 15px;
+	background: rgba(255,255,255,0.2);
+}
+
+.fillers label {
+	position: relative;
+	cursor: pointer; 
+}
+
+.fillers label input[type="checkbox"] {
+	display: none;
+}
+
+.checkbox-indicator {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #ffffff;
+	border-radius: 3px;
+}
+
+.checkbox-indicator:hover {
+	width: 16px;
+	height: 16px;
+	border: 2px solid #ffffff;
+}
+
+.fillers input[type="checkbox"]:checked + .checkbox-indicator::after {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 8px;
+	height: 4px;
+	border-left: 3px solid #ffffff;
+	border-bottom: 3px solid #ffffff;
+	transform: rotate(-45deg);
+}
+
+.fillers input[type="checkbox"]:checked:hover + .checkbox-indicator::after {
+	top: 3px;
+	left: 3px;
+}
+
+.btn-form {
+	display: inline-block;
+	border: 2px solid #ffffff;
+	border-radius: 18px;
+	padding: 7px 27px;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	color: #ffffff;
+	vertical-align: bottom;
+	background: rgba(255,255,255,0.2);
+}
+
+.btn-form:hover {
+	color: #323232;
+	background: #fff;
+}
+
+.btn-form:active {
+	color: #323232;
+	background: #ededed;
+	box-shadow: inset 0 2px 1px 0 #696969;
 }
 
 .pagination {
@@ -725,6 +1419,15 @@ h1, h2 {
 	margin-right: 0;
 }
 
+.pagination li:first-child {
+	width: 26px;
+	height: 26px;
+	margin-right: 14px;
+	background: url("../img/sign.png")0 6px no-repeat;
+	transform: rotate(180deg);
+	opacity: 0.2;
+}
+
 .pagination a {
 	display: inline-block;
 	width: 26px;
@@ -743,13 +1446,6 @@ h1, h2 {
 	color: #323232;
 	background: #fff;
 	border-radius: 13px;
-}
-
-.pagination span {
-	display: inline-block;
-	width: 26px;
-	padding: 4px 0;
-	color: rgba(255,255,255,0.2);
 }
 
 .pagination::after {
