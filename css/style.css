@@ -288,6 +288,10 @@ ul.sub-menu {
 	padding: 8px 13px;
 }
 
+.search input:focus + label {
+	display: block;
+}
+
 .login {
 	width: 277px;
 }
@@ -306,6 +310,10 @@ ul.sub-menu {
 	width: 209px;
 	border: 2px solid #8fbdec;
 	padding: 8px 13px;
+}
+
+.login input:focus + label {
+	display: block;
 }
 
 .login .help {
@@ -803,6 +811,12 @@ ul.sub-menu {
 	margin-left: -27px;
 }
 
+#yandex-map {
+	position: absolute;
+	top: 0;
+	left: -27px;
+}
+
 .contacts {
 	position: absolute;
 	top: 62px;
@@ -952,9 +966,32 @@ ul.sub-menu {
 	margin-bottom: 5px;
 }
 
+/* модальное окно */
+
+@keyframes expansion {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
 .modal-window {
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 338px;
 	left: 50%;
 	z-index: 20;
@@ -964,6 +1001,26 @@ ul.sub-menu {
 	padding: 18px 24px;
 	background: #f8f7f4;
 	color: #323232;
+	animation: expansion 0.8s;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background: rgba(50,50,50,0.3);
+}
+
+.modal-window-show {
+	display: block;
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 .modal-window h2 {
@@ -977,9 +1034,9 @@ ul.sub-menu {
 
 .modal-window .close {
 	position: absolute;
-	top: 25px;
+	top: 15px;
 	right: 15px;
-	width: 18px;
+	width: 28px;
 	height: 18px;
 	font-size: 0;
 	background: transparent;
@@ -989,7 +1046,7 @@ ul.sub-menu {
 .modal-window .close::after {
 	content: "";
 	position: absolute;
-	top: 0;
+	top: 10px;
 	right: 0;
 	width: 21px;
 	height: 2px;
@@ -1004,6 +1061,10 @@ ul.sub-menu {
 	transform: rotate(-45deg);
 }
 
+.input-wrapper {
+	position: relative;
+}
+
 .modal-window input,
 .modal-window textarea {
 	width: 265px;
@@ -1014,6 +1075,16 @@ ul.sub-menu {
 	font-size: 16px;
 	line-height: 24px;
 	color: #323232;
+}
+
+.input-wrapper label {
+	display: none;
+	position: absolute;
+	top: -15px;
+	left: 15px;
+	font-size: 11px;
+	line-height: 13px;
+	color: #5b9ddf;
 }
 
 .modal-window input:hover {
@@ -1027,6 +1098,10 @@ ul.sub-menu {
 	width: 263px;
 	border: 2px solid #8fbdec;
 	padding: 8px 13px;
+}
+
+.modal-window input:focus + label {
+	display: block;
 }
 
 .modal-window textarea {
@@ -1048,23 +1123,12 @@ ul.sub-menu {
 	padding: 8px 13px;
 }
 
-/* жирный шрифт при вводе текста и подсказку сверху для поля в фокусе пока не придумала :-( */
+/* жирный шрифт при вводе текста пока не придумала :-( */
 
 .modal-window button {
 	margin-left: 314px;
 	border: none;
 	padding: 10px 24px;
-}
-
-.overlay {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 10;
-	width: 100%;
-	height: 100%;
-	background: rgba(50,50,50,0.3);
 }
 
 /* catalog */
@@ -1319,6 +1383,20 @@ fieldset label {
 	left: 3px;
 }
 
+.fat input[type="radio"]:disabled + .radio-indicator,
+.fat input[type="radio"]:disabled:hover + .radio-indicator {
+	width: 18px;
+	height: 18px;
+	border: 1px solid rgba(255,255,255,0.4);
+}
+
+.fat input[type="radio"]:checked:disabled + .radio-indicator::after,
+.fat input[type="radio"]:checked:disabled:hover + .radio-indicator::after {
+	top: 4px;
+	left: 4px;
+	background: rgba(255,255,255,0.4);
+}
+
 .fillers {
 	height: 18px;
 	margin-top: 6px;
@@ -1367,6 +1445,21 @@ fieldset label {
 .fillers input[type="checkbox"]:checked:hover + .checkbox-indicator::after {
 	top: 3px;
 	left: 3px;
+}
+
+.fillers input[type="checkbox"]:disabled + .checkbox-indicator,
+.fillers input[type="checkbox"]:disabled:hover + .checkbox-indicator {
+	width: 18px;
+	height: 18px;
+	border: 1px solid rgba(255,255,255,0.4);
+}
+
+.fillers input[type="checkbox"]:checked:disabled + .checkbox-indicator::after,
+.fillers input[type="checkbox"]:checked:disabled:hover + .checkbox-indicator::after {
+	top: 4px;
+	left: 4px;
+	border-left: 3px solid rgba(255,255,255,0.4);
+	border-bottom: 3px solid rgba(255,255,255,0.4);
 }
 
 .btn-form {
