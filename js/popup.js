@@ -33,7 +33,7 @@ var link = document.querySelector(".contacts .btn");
         if (!name.value || !mail.value || !message.value) {
         event.preventDefault();
         popup.classList.remove("modal-error");
-        popup.offsetWidth = popup.offsetWidth;
+        popup.offsetWidth = popup.offsetWidth;/* без этого выражения анимация срабатывает только единожды */
         popup.classList.add("modal-error");
       } else {
           localStorage.setItem("name", name.value);

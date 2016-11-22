@@ -28,7 +28,7 @@ h1 {
 .all-content-main {
 	width: 1200px;
 	margin: 0 auto;
-	background-color: #849d8f url("../img/ice-cream-1.png") 50% 0 no-repeat;
+	background: #849d8f url("../img/ice-cream-1.png") 50% 0 no-repeat;
 	transition:
 		background-color 0.5s ease,
 		background-image 0.5s ease;
@@ -614,13 +614,13 @@ ul.sub-menu {
 	margin-right: 0;
 }
 
-.prise-position {
+.price-position {
 	position: absolute;
 	top: 215px;
 	left: 0;
 }
 
-.catalog .prise {
+.catalog .price {
 	font-size: 45px;
 	font-weight: 700;
 	text-shadow: 1px 1px 3px #313235;
@@ -667,7 +667,7 @@ ul.sub-menu {
 	background: rgba(255,255,255,0.2);
 }
 
-.wrapper .prise-position {
+.wrapper .price-position {
 	top: 221px;
 	left: 13px;
 }
@@ -678,7 +678,6 @@ ul.sub-menu {
 	padding: 10px 17px;
 }
 
-/* только вот буковки белые с нижнего слоя неаккуратно проступают */
 .catalog li:hover .wrapper {
 	display: block;
 }
@@ -811,7 +810,7 @@ ul.sub-menu {
 	margin-left: -27px;
 }
 
-#yandex-map {
+.map div {
 	position: absolute;
 	top: 0;
 	left: -27px;
@@ -1093,7 +1092,10 @@ ul.sub-menu {
 	padding: 8px 13px;
 }
 
-/* остаётся рамка автоматического фокуса браузера, как отключить? */
+*:focus {
+    outline: none;
+}
+
 .modal-window input:focus {
 	width: 263px;
 	border: 2px solid #8fbdec;
@@ -1190,7 +1192,6 @@ ul.sub-menu {
 	color: #fff;
 }
 
-/* странно, у меня в макете и наведение и нажатие с подчёркиванием */
 .breadcrumbs a:hover, .breadcrumbs a:active {
 	color: #ffbc9e;
 	border-bottom: 1px solid rgba(255,188,158,0.3);
@@ -1510,6 +1511,7 @@ fieldset label {
 
 .pagination li:last-child {
 	margin-right: 0;
+	background: url("../img/sign.png") 10px 6px no-repeat;
 }
 
 .pagination li:first-child {
@@ -1524,6 +1526,7 @@ fieldset label {
 .pagination a {
 	display: inline-block;
 	width: 26px;
+	height: 18px;
 	padding: 4px 0;
 	color: #fff;
 	text-decoration: none;
@@ -1535,7 +1538,8 @@ fieldset label {
 	border-radius: 13px;
 }
 
-.pagination .active-page, .pagination a:active {
+.pagination .active-page,
+.pagination a:active {
 	color: #323232;
 	background: #fff;
 	border-radius: 13px;
